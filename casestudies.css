@@ -1,0 +1,1666 @@
+﻿/* ════════════════════════════════════════════════════════════════
+   CASE-STUDIES.CSS
+   Page-specific styles for casestudies.html
+   Built on top of the Listora design system (style.css)
+   ════════════════════════════════════════════════════════════════ */
+
+
+/* ───────────────────────────────────────────────────────────────
+   1. HERO SECTION
+   ─────────────────────────────────────────────────────────────── */
+
+.cs-hero {
+    position: relative;
+    width: 100%;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 160px 5% 80px;
+    background:
+        radial-gradient(ellipse 80% 55% at 50% -10%, rgba(3, 43, 102, 0.07) 0%, transparent 70%),
+        linear-gradient(120deg, #fff4ee 0%, #fcfcfd 30%, #f7f9ff 65%, #eef4ff 100%);
+}
+
+.cs-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.cs-hero__orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.cs-hero__orb--1 {
+    width: 520px;
+    height: 520px;
+    top: -200px;
+    left: -180px;
+    background: radial-gradient(circle, rgba(255, 98, 0, 0.14) 0%, transparent 75%);
+}
+
+.cs-hero__orb--2 {
+    width: 480px;
+    height: 480px;
+    bottom: -220px;
+    right: -160px;
+    background: radial-gradient(circle, rgba(3, 43, 102, 0.10) 0%, transparent 75%);
+}
+
+.cs-hero__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(3, 43, 102, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(3, 43, 102, 0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(0, 0, 0, 0.9), transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(0, 0, 0, 0.9), transparent 75%);
+}
+
+.cs-hero__container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.cs-hero__content {
+    max-width: 640px;
+}
+
+.cs-hero__tag {
+    margin-bottom: 22px;
+}
+
+.cs-hero__headline {
+    font-size: clamp(2.27rem, 5vw, 4.07rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--clr-navy);
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+}
+
+.cs-hero__sub {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--clr-text-muted);
+    max-width: 540px;
+    margin-bottom: 36px;
+}
+
+.cs-hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.cs-hero__btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--clr-orange);
+    color: var(--clr-white);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: var(--radius-btn);
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.28);
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.35s ease;
+}
+
+.cs-hero__btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(108deg, transparent 28%, rgba(255, 255, 255, 0.40) 50%, transparent 72%);
+    transform: translateX(-130%);
+    pointer-events: none;
+    transition: transform 0ms linear;
+}
+
+@media (hover: hover) {
+    .cs-hero__btn-primary:hover {
+        background: var(--clr-orange-dark);
+        transform: translateY(-3px) scale(1.015);
+        box-shadow: 0 14px 36px rgba(255, 102, 0, 0.36);
+    }
+
+    .cs-hero__btn-primary:hover::after {
+        transform: translateX(130%);
+        transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+}
+
+.cs-hero__btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--clr-navy);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 16px 30px;
+    border-radius: var(--radius-btn);
+    border: 1.5px solid var(--clr-border);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) {
+    .cs-hero__btn-ghost:hover {
+        background: var(--clr-white);
+        border-color: rgba(255, 98, 0, 0.30);
+        transform: translateY(-3px);
+    }
+}
+
+/* Hero visual stat cards */
+.cs-hero__visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.cs-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: var(--radius-card);
+    padding: 22px 26px;
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+    animation: csStatIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.cs-stat-card--1 {
+    align-self: flex-start;
+    animation-delay: 0.15s;
+}
+
+.cs-stat-card--2 {
+    align-self: center;
+    margin-left: 40px;
+    animation-delay: 0.35s;
+}
+
+.cs-stat-card--3 {
+    align-self: flex-end;
+    animation-delay: 0.55s;
+}
+
+@keyframes csStatIn {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.cs-stat-card__icon {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--clr-navy), #0d3f91);
+    color: var(--clr-white);
+    font-size: 18px;
+}
+
+.cs-stat-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cs-stat-card__body strong {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--clr-navy);
+    line-height: 1.2;
+}
+
+.cs-stat-card__body span {
+    font-size: 0.69rem;
+    color: var(--clr-text-muted);
+    line-height: 1.4;
+}
+
+/* Scroll cue */
+.cs-hero__scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.cs-hero__scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(3, 43, 102, 0.35), transparent);
+    animation: csScrollPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes csScrollPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scaleY(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+.cs-hero__scroll span {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clr-text-muted);
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   1b. SECTION HEADER HEADING ALIGNMENT FIXES
+   Prevents gradient-text <span> from dropping to a new line and
+   ensures navy + orange words sit on a single shared baseline,
+   matching the reference images.
+   ─────────────────────────────────────────────────────────────── */
+
+/* The .gradient-text span uses -webkit-text-fill-color:transparent
+   which can cause inline baseline shifts. Force true baseline. */
+.section-header h2 .gradient-text {
+    display: inline;
+    vertical-align: baseline;
+    line-height: inherit;
+}
+
+/* All section headings that mix plain navy text + orange gradient
+   span: use flex so both pieces share one baseline row. */
+.cs-stories-section .section-header h2,
+.cs-faq-section .section-header h2,
+.cs-video-section .section-header h2,
+.cs-workflow-section .section-header h2,
+.cs-feedback-section .section-header h2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0 0.28em;
+    line-height: 1.2;
+}
+
+/* Small screens: allow wrapping, keep baseline alignment */
+@media (max-width: 600px) {
+
+    .cs-stories-section .section-header h2,
+    .cs-faq-section .section-header h2,
+    .cs-video-section .section-header h2,
+    .cs-workflow-section .section-header h2,
+    .cs-feedback-section .section-header h2 {
+        justify-content: center;
+    }
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   2. TRUST STRIP
+   ─────────────────────────────────────────────────────────────── */
+
+.cs-trust-strip {
+    background: var(--clr-white);
+    border-bottom: 1px solid var(--clr-border);
+    padding: 28px 0;
+}
+
+.cs-trust-strip__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.cs-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--clr-navy);
+    white-space: nowrap;
+}
+
+.cs-trust-item i {
+    font-size: 14px;
+    color: var(--clr-orange);
+}
+
+.cs-trust-divider {
+    width: 1px;
+    height: 22px;
+    background: var(--clr-border);
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   3. VIDEO TESTIMONIALS — fully rebuilt
+   ─────────────────────────────────────────────────────────────── */
+
+/* ── Section wrapper ── */
+.cs-video-section {
+    padding: var(--section-pad-y) 0;
+    background:
+        radial-gradient(circle at top right, rgba(255, 90, 0, 0.06), transparent 40%),
+        var(--clr-body-bg);
+}
+
+/* ── Responsive 3-col grid ── */
+.cs-video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 56px;
+}
+
+/* ── Card shell ── */
+.cs-video-card {
+    border-radius: 18px;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ─────────────────────────────────────────
+   VIDEO WRAPPER — 16:9 aspect ratio box
+   ───────────────────────────────────────── */
+.cs-vid-wrap {
+    position: relative;
+    width: 100%;
+    /* 16:9 ratio maintained at all breakpoints */
+    aspect-ratio: 16 / 9;
+    background: #021f4b;
+    border-radius: 14px 14px 0 0;
+    /* overflow:visible so native video controls (progress bar)
+       are never clipped at the bottom edge on any browser */
+    overflow: visible;
+    cursor: pointer;
+}
+
+/* Actual <video> element: fills wrapper, no cropping */
+.cs-vid {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Disabled by default — enabled once playing inline */
+    pointer-events: none;
+}
+
+/* Allow native controls to receive pointer events when playing */
+.cs-vid.is-playing {
+    pointer-events: auto;
+}
+
+/* ─────────────────────────────────────────
+   OVERLAY (play button + expand button)
+   ───────────────────────────────────────── */
+.cs-vid-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg,
+            rgba(2, 31, 75, 0.18) 0%,
+            rgba(2, 31, 75, 0.52) 100%);
+    transition: opacity 0.38s ease, background 0.45s ease;
+    will-change: opacity;
+}
+
+/* When playing: fade overlay away, keep expand button visible */
+.cs-vid-overlay.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ─────────────────────────────────────────
+   PLAY BUTTON
+   ───────────────────────────────────────── */
+.cs-play-btn {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.16);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition:
+        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+        background 0.32s ease,
+        border-color 0.32s ease;
+}
+
+.cs-play-btn:focus-visible {
+    outline: 3px solid #ff6600;
+    outline-offset: 4px;
+}
+
+.cs-play-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    /* Nudge triangle slightly right for optical centering */
+    margin-left: 3px;
+}
+
+/* Pulsing ring */
+.cs-play-ring {
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    animation: csPlayPulse 2.4s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes csPlayPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.65;
+    }
+
+    100% {
+        transform: scale(1.65);
+        opacity: 0;
+    }
+}
+
+/* Hover effects (pointer devices only) */
+@media (hover: hover) {
+    .cs-vid-wrap:hover .cs-play-btn {
+        transform: scale(1.1);
+        background: var(--clr-orange, #ff6600);
+        border-color: var(--clr-orange, #ff6600);
+    }
+
+    .cs-vid-wrap:hover .cs-vid-overlay:not(.is-hidden) {
+        background: linear-gradient(180deg,
+                rgba(2, 31, 75, 0.08) 0%,
+                rgba(2, 31, 75, 0.38) 100%);
+    }
+}
+
+/* ─────────────────────────────────────────
+   EXPAND / FULLSCREEN BUTTON
+   ───────────────────────────────────────── */
+.cs-expand-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 6;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(2, 31, 75, 0.55);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(4px);
+    transition:
+        opacity 0.28s ease,
+        transform 0.28s ease,
+        background 0.2s ease;
+    /* Inherit pointer events from parent overlay */
+    pointer-events: auto !important;
+}
+
+.cs-expand-btn:focus-visible {
+    outline: 3px solid #ff6600;
+    outline-offset: 3px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Show expand button on hover of the wrap (overlay visible or not) */
+.cs-vid-wrap:hover .cs-expand-btn,
+.cs-vid-wrap:focus-within .cs-expand-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* When overlay is hidden (video playing inline), overlay has pointer-events:none
+   but the expand button inside it needs to remain clickable.
+   We re-show it by targeting via the wrap's playing state. */
+.cs-vid-wrap:has(.cs-vid.is-playing) .cs-expand-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (hover: hover) {
+    .cs-expand-btn:hover {
+        background: var(--clr-orange, #ff6600);
+        border-color: var(--clr-orange, #ff6600);
+    }
+}
+
+/* ─────────────────────────────────────────
+   LOADING SPINNER
+   ───────────────────────────────────────── */
+.cs-vid-spinner {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.cs-vid-spinner::after {
+    content: '';
+    width: 36px;
+    height: 36px;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: csVidSpin 0.7s linear infinite;
+}
+
+.cs-vid-wrap.is-buffering .cs-vid-spinner {
+    display: flex;
+}
+
+@keyframes csVidSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ─────────────────────────────────────────
+   CARD CONTENT AREA
+   ───────────────────────────────────────── */
+.cs-video-card .card-content {
+    flex: 1;
+}
+
+.cs-industry-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--clr-orange, #ff6600);
+    background: rgba(255, 98, 0, 0.08);
+    border: 1px solid rgba(255, 98, 0, 0.18);
+    padding: 5px 12px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+}
+
+.cs-video-card .card-content h3 {
+    font-size: 0.97rem;
+    margin-bottom: 16px;
+}
+
+.cs-video-detail {
+    margin-bottom: 12px;
+}
+
+.cs-video-detail:last-child {
+    margin-bottom: 0;
+}
+
+.cs-detail-label {
+    display: block;
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clr-text-muted);
+    opacity: 0.65;
+    margin-bottom: 4px;
+}
+
+.cs-video-detail p {
+    font-size: 0.73rem;
+    line-height: 1.7;
+    color: var(--clr-text-muted);
+    margin-bottom: 0;
+}
+
+/* ─────────────────────────────────────────
+   MODAL — video lightbox
+   ───────────────────────────────────────── */
+
+/* Prevent body scroll when modal is open */
+body.cs-modal-open {
+    overflow: hidden;
+    /* Reserve scrollbar space so page doesn't jump */
+    padding-right: var(--scrollbar-w, 0px);
+}
+
+.cs-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Extra top padding so the close button (top: -48px) is visible */
+    padding: 72px 20px 24px;
+    /* Hidden by default */
+    visibility: hidden;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.cs-modal.is-open {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Dark overlay */
+.cs-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 12, 36, 0.92);
+    opacity: 0;
+    transition: opacity 0.38s ease;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+}
+
+.cs-modal.is-open .cs-modal__overlay {
+    opacity: 1;
+}
+
+/* Modal shell */
+.cs-modal__shell {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 960px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    transform: scale(0.92) translateY(24px);
+    transition:
+        opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cs-modal.is-open .cs-modal__shell {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* Video wrapper — no aspect-ratio trick, just let the video
+   be a normal block. The video element itself enforces 16:9
+   via its intrinsic dimensions. Controls stay inside. */
+.cs-modal__vid-wrap {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+    /* collapse whitespace gap below video */
+    background: #000;
+}
+
+/* The video element:
+   - width:100% fills the modal
+   - max-height:85vh prevents it going off-screen on portrait/mobile
+   - display:block removes inline baseline gap
+   - object-fit:contain keeps the full frame visible
+   Native controls are INSIDE the video element's own render box,
+   so they are never clipped by any parent overflow */
+.cs-modal__vid {
+    display: block;
+    width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    background: #000;
+}
+
+/* Close button */
+.cs-modal__close {
+    position: absolute;
+    top: -48px;
+    right: 0;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cs-modal__close:hover {
+    background: #ff6600;
+    border-color: #ff6600;
+    transform: rotate(90deg);
+}
+
+.cs-modal__close:focus-visible {
+    outline: 3px solid #ff6600;
+    outline-offset: 4px;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE BREAKPOINTS
+   ───────────────────────────────────────── */
+
+/* Tablet: 2-col grid */
+@media (max-width: 992px) {
+    .cs-video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    /* Center-align the lone third card */
+    .cs-video-grid .cs-video-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 520px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+/* Mobile: single-col */
+@media (max-width: 640px) {
+    .cs-video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cs-video-grid .cs-video-card:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .cs-play-btn {
+        width: 56px;
+        height: 56px;
+    }
+
+    /* Always show expand button on touch devices */
+    .cs-expand-btn {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .cs-modal__shell {
+        border-radius: 8px;
+    }
+
+    .cs-modal__close {
+        top: -44px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .cs-modal {
+        padding: 64px 12px 16px;
+    }
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   4. EDITORIAL CASE STUDIES
+   ─────────────────────────────────────────────────────────────── */
+
+.cs-stories-section {
+    padding: var(--section-pad-y) 0;
+    background: var(--clr-white);
+}
+
+.cs-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    margin-bottom: 110px;
+    opacity: 0;
+    transform: translateY(48px);
+    transition:
+        opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cs-story.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cs-story:last-child {
+    margin-bottom: 0;
+}
+
+.cs-story--left {
+    direction: rtl;
+}
+
+.cs-story--left .cs-story__content-col,
+.cs-story--left .cs-story__image-col {
+    direction: ltr;
+}
+
+.cs-story--left .cs-story__content-col,
+.cs-story--left .cs-story__content-col * {
+    text-align: left;
+}
+
+/* Image column */
+.cs-story__image-col {
+    position: relative;
+}
+
+.cs-story__image-wrap {
+    position: relative;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    aspect-ratio: 4 / 3;
+    pointer-events: auto;
+}
+
+.cs-story__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), filter 1s ease;
+}
+
+@media (hover: hover) {
+    .cs-story__image-wrap:hover .cs-story__img {
+        transform: scale(1.06);
+        filter: brightness(1.03) saturate(1.05);
+    }
+}
+
+.cs-story__image-accent {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(3, 43, 102, 0.22) 0%, transparent 55%);
+    pointer-events: none;
+}
+
+.cs-story__floating-tag {
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(10px);
+    color: var(--clr-navy);
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 50px;
+    box-shadow: 0 8px 24px rgba(3, 43, 102, 0.14);
+}
+
+.cs-story__floating-tag i {
+    color: var(--clr-orange);
+    font-size: 11px;
+}
+
+/* Content column */
+.cs-story__content-col {
+    position: relative;
+}
+
+.cs-story__number {
+    display: block;
+    font-size: 3.07rem;
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(90deg, var(--clr-orange-alt) 0%, #ff9a3c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.25;
+    margin-bottom: 6px;
+}
+
+.cs-story__title {
+    font-size: clamp(1.37rem, 2.6vw, 1.97rem);
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--clr-navy);
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+}
+
+.cs-story__blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cs-story__block {
+    padding-left: 20px;
+    border-left: 2.5px solid var(--clr-border);
+    transition: border-color 0.4s ease;
+}
+
+.cs-story__block--outcome {
+    border-left-color: rgba(255, 98, 0, 0.35);
+}
+
+.cs-story__block-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clr-navy);
+    margin-bottom: 8px;
+}
+
+.cs-story__block-label i {
+    font-size: 10px;
+    color: var(--clr-orange);
+}
+
+.cs-story__block p {
+    font-size: 0.79rem;
+    line-height: 1.85;
+    color: var(--clr-text-muted);
+}
+
+@media (hover: hover) {
+    .cs-story:hover .cs-story__block--outcome {
+        border-left-color: var(--clr-orange);
+    }
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   5. BEFORE & AFTER WORKFLOW
+   ─────────────────────────────────────────────────────────────── */
+
+.cs-workflow-section {
+    padding: var(--section-pad-y) 0;
+    background:
+        radial-gradient(circle at bottom left, rgba(255, 90, 0, 0.06), transparent 40%),
+        var(--clr-body-bg);
+}
+
+.cs-workflow-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.cs-workflow-comparison {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 0;
+    padding: 36px 40px;
+    text-align: left;
+}
+
+.cs-wf-before,
+.cs-wf-after {
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-wf-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+}
+
+.cs-wf-badge--before {
+    background: rgba(3, 43, 102, 0.06);
+    color: var(--clr-text-muted);
+    border: 1px solid var(--clr-border);
+}
+
+.cs-wf-badge--after {
+    background: rgba(255, 98, 0, 0.08);
+    color: var(--clr-orange);
+    border: 1px solid rgba(255, 98, 0, 0.20);
+}
+
+.cs-wf-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--clr-navy);
+    margin-bottom: 18px;
+}
+
+.cs-wf-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cs-wf-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.73rem;
+    line-height: 1.6;
+    color: var(--clr-text-muted);
+}
+
+.cs-wf-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    margin-top: 1px;
+}
+
+.cs-wf-item--pain .cs-wf-icon {
+    background: rgba(220, 38, 38, 0.08);
+    color: #dc2626;
+}
+
+.cs-wf-item--gain .cs-wf-icon {
+    background: rgba(255, 98, 0, 0.10);
+    color: var(--clr-orange);
+}
+
+.cs-wf-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--clr-navy), #0d3f91);
+    color: var(--clr-white);
+    font-size: 14px;
+    margin: 0 32px;
+    flex-shrink: 0;
+    box-shadow: 0 10px 24px rgba(3, 43, 102, 0.18);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (hover: hover) {
+    .cs-workflow-comparison:hover .cs-wf-divider {
+        transform: scale(1.12) rotate(8deg);
+    }
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   6. FEEDBACK WALL
+   ─────────────────────────────────────────────────────────────── */
+
+.cs-feedback-section {
+    padding: var(--section-pad-y) 0;
+    background: var(--clr-white);
+}
+
+.cs-feedback-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 24px;
+}
+
+.cs-feedback-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 32px 28px;
+}
+
+.cs-feedback-card--accent {
+    background: linear-gradient(135deg, var(--clr-navy) 0%, var(--clr-navy-deep) 100%);
+}
+
+.cs-feedback-card--accent .cs-feedback-text,
+.cs-feedback-card--accent .cs-feedback-name {
+    color: var(--clr-white);
+}
+
+.cs-feedback-card--accent .cs-feedback-industry {
+    color: rgba(255, 255, 255, 0.60);
+}
+
+.cs-feedback-card--accent .cs-feedback-avatar {
+    background: rgba(255, 255, 255, 0.10);
+    color: var(--clr-white);
+}
+
+.cs-feedback-card--large {
+    grid-column: span 2;
+}
+
+.cs-feedback-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+    color: var(--clr-orange);
+    font-size: 11px;
+}
+
+.cs-feedback-text {
+    font-size: 0.79rem;
+    line-height: 1.85;
+    color: var(--clr-navy);
+    margin-bottom: 24px;
+    flex: 1;
+}
+
+.cs-feedback-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.cs-feedback-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(3, 43, 102, 0.06);
+    color: var(--clr-navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.cs-feedback-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-feedback-name {
+    font-size: 0.77rem;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--clr-navy);
+}
+
+.cs-feedback-industry {
+    font-size: 0.65rem;
+    color: var(--clr-text-muted);
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   7. FAQ
+   ─────────────────────────────────────────────────────────────── */
+
+.cs-faq-section {
+    padding: var(--section-pad-y) 0;
+    background: var(--clr-body-bg);
+}
+
+.cs-faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cs-faq-item {
+    background: var(--clr-white);
+    border: 1px solid var(--clr-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cs-faq-item:has(.cs-faq-trigger[aria-expanded="true"]) {
+    border-color: rgba(255, 98, 0, 0.22);
+    box-shadow: var(--shadow-card);
+}
+
+.cs-faq-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.cs-faq-question {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--clr-navy);
+}
+
+.cs-faq-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 98, 0, 0.08);
+    color: var(--clr-orange);
+    font-size: 10px;
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.35s ease;
+}
+
+.cs-faq-trigger[aria-expanded="true"] .cs-faq-icon {
+    transform: rotate(180deg);
+    background: var(--clr-orange);
+    color: var(--clr-white);
+}
+
+.cs-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+        max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.4s ease;
+}
+
+.cs-faq-trigger[aria-expanded="true"]+.cs-faq-answer {
+    opacity: 1;
+}
+
+.cs-faq-answer p {
+    font-size: 0.75rem;
+    line-height: 1.85;
+    color: var(--clr-text-muted);
+    padding: 0 26px 24px;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   8. RESPONSIVE
+   ─────────────────────────────────────────────────────────────── */
+
+/* Large desktop 1440px+ */
+@media (min-width: 1440px) {
+    .cs-hero__headline {
+        font-size: 4.27rem;
+    }
+
+    .cs-video-grid {
+        gap: 32px;
+    }
+}
+
+/* 992px - 1199px */
+@media (max-width: 1199px) {
+    .cs-hero__container {
+        gap: 40px;
+    }
+
+    .cs-stat-card--2 {
+        margin-left: 20px;
+    }
+}
+
+/* Tablet 992px and below */
+@media (max-width: 992px) {
+    .cs-hero {
+        padding: 140px 5% 70px;
+    }
+
+    .cs-hero__container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .cs-hero__content {
+        max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .cs-hero__sub {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cs-hero__actions {
+        justify-content: center;
+    }
+
+    .cs-hero__visual {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .cs-stat-card,
+    .cs-stat-card--1,
+    .cs-stat-card--2,
+    .cs-stat-card--3 {
+        align-self: center;
+        margin-left: 0;
+        flex: 1 1 220px;
+    }
+
+    .cs-video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .cs-feedback-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cs-feedback-card--large {
+        grid-column: span 2;
+    }
+
+    .cs-story {
+        gap: 44px;
+        margin-bottom: 80px;
+    }
+}
+
+/* Mobile 768px and below */
+@media (max-width: 768px) {
+    .cs-hero {
+        min-height: auto;
+        padding: 120px 5% 60px;
+    }
+
+    .cs-hero__headline {
+        font-size: clamp(1.87rem, 9vw, 2.67rem);
+    }
+
+    .cs-hero__sub {
+        font-size: 13px;
+    }
+
+    .cs-hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .cs-hero__btn-primary,
+    .cs-hero__btn-ghost {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .cs-trust-strip__inner {
+        gap: 22px;
+    }
+
+    .cs-trust-item {
+        font-size: 10.5px;
+    }
+
+    .cs-trust-divider {
+        display: none;
+    }
+
+    .cs-video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cs-story,
+    .cs-story--left {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 28px;
+        margin-bottom: 60px;
+    }
+
+    .cs-story__image-col {
+        order: -1;
+    }
+
+    .cs-story__number {
+        font-size: 2.27rem;
+    }
+
+    .cs-story__title {
+        margin-bottom: 20px;
+    }
+
+    .cs-workflow-comparison {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 28px 24px;
+    }
+
+    .cs-wf-divider {
+        margin: 0 auto;
+        transform: rotate(90deg);
+    }
+
+    .cs-feedback-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-feedback-card--large {
+        grid-column: span 1;
+    }
+
+    .cs-faq-trigger {
+        padding: 18px 20px;
+    }
+
+    .cs-faq-answer p {
+        padding: 0 20px 20px;
+    }
+}
+
+/* Rotated divider hover state on mobile (combined media query —
+   was previously invalid nesting inside max-width: 768px) */
+@media (max-width: 768px) and (hover: hover) {
+    .cs-workflow-comparison:hover .cs-wf-divider {
+        transform: rotate(90deg) scale(1.12);
+    }
+}
+
+/* Small mobile 480px and below */
+@media (max-width: 480px) {
+    .cs-hero {
+        padding: 110px 4% 50px;
+    }
+
+    .cs-hero__tag {
+        font-size: 9px;
+    }
+
+    .cs-stat-card {
+        padding: 18px 20px;
+    }
+
+    .cs-stat-card__icon {
+        width: 46px;
+        height: 46px;
+        font-size: 15px;
+    }
+
+    .cs-story__image-wrap {
+        aspect-ratio: 16 / 11;
+    }
+
+    .cs-story__floating-tag {
+        bottom: 14px;
+        left: 14px;
+        font-size: 9.5px;
+        padding: 8px 14px;
+    }
+
+    .cs-wf-divider {
+        width: 46px;
+        height: 46px;
+    }
+
+    .cs-feedback-card {
+        padding: 26px 22px;
+    }
+}
+
+/* Very small mobile 360px and below */
+@media (max-width: 360px) {
+    .cs-hero__headline {
+        font-size: 1.67rem;
+    }
+
+    .cs-stat-card__body strong {
+        font-size: 0.82rem;
+    }
+
+    .cs-story__number {
+        font-size: 1.87rem;
+    }
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   9. JS INTEGRATION & FALLBACKS
+   ─────────────────────────────────────────────────────────────── */
+
+/*
+   .cs-video-card.service-card, .cs-story,
+   .cs-workflow-comparison.listora-advantage-card and
+   .cs-feedback-card.listora-advantage-card all start with
+   opacity: 0 (entrance state) and rely on case-studies.js adding
+   .show / .listora-card-visible via IntersectionObserver.
+
+   If JS fails to load, these elements would stay invisible
+   forever. This fallback fades them in after a short delay
+   regardless, so content is never permanently hidden.
+*/
+
+.cs-video-card.service-card,
+.cs-story,
+.cs-workflow-comparison.listora-advantage-card,
+.cs-feedback-card.listora-advantage-card {
+    animation: csFallbackReveal 0.01s 2.5s forwards;
+}
+
+@keyframes csFallbackReveal {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* If JS already added the reveal class, cancel the fallback
+   animation so it doesn't fight with the transition */
+.cs-video-card.service-card.show,
+.cs-story.show,
+.cs-workflow-comparison.listora-advantage-card.listora-card-visible,
+.cs-feedback-card.listora-advantage-card.listora-card-visible {
+    animation: none;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   10. REDUCED MOTION
+   ─────────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cs-stat-card,
+    .cs-hero__scroll-line,
+    .cs-play-ring,
+    .cs-story,
+    .cs-story__img,
+    .cs-hero__btn-primary,
+    .cs-hero__btn-primary::after,
+    .cs-wf-divider,
+    .cs-faq-icon,
+    .cs-faq-answer,
+    .cs-video-card.service-card,
+    .cs-workflow-comparison.listora-advantage-card,
+    .cs-feedback-card.listora-advantage-card {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}

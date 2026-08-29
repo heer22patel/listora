@@ -1,0 +1,1269 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Listora Case Studies – See how we've helped real estate professionals transform with lead generation, CRM automation, branding, and content systems." />
+  <title>Case Studies – Listora | Smart Marketing for Real Estate</title>
+
+  <!-- Fonts: Poppins only -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+      <link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="drawer.css">
+
+  <!-- Case Studies page styles -->
+  <link rel="stylesheet" href="casestudies.css">
+  <!-- Responsive Audit Fixes -->
+  <link rel="stylesheet" href="responsive-fixes.css">
+
+  <!-- ── UNIFIED NAVBAR STYLES — identical to index.html ── -->
+  <style>
+    .ct-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+    }
+
+    .ct-nav {
+      display: flex !important;
+      align-items: center;
+      gap: 32px;
+      padding: 20px 5% 20px 2%;
+      background: rgba(255, 255, 255, 0.0);
+      transition: background .35s ease, box-shadow .35s ease, padding .35s ease;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .ct-nav.scrolled {
+      background: rgba(255, 255, 255, .97) !important;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 2px 24px rgba(3, 43, 102, .08);
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .ct-nav__logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .ct-nav__logo img {
+      width: 62px;
+      height: auto;
+      display: block;
+    }
+
+    .ct-nav__links {
+      display: flex !important;
+      align-items: center !important;
+      gap: 4px !important;
+      margin-left: auto !important;
+      list-style: none !important;
+      padding: 0 !important;
+      flex-direction: row !important;
+      position: static !important;
+      background: transparent !important;
+      max-height: none !important;
+    }
+
+    .ct-nav__links li {
+      width: auto !important;
+      text-align: left !important;
+      padding: 0 !important;
+      border: none !important;
+    }
+
+    .ct-nav__links a,
+    .ct-nav__links li a {
+      display: inline-block !important;
+      font-family: 'Poppins', sans-serif !important;
+      font-size: 15px !important;
+      font-weight: 500 !important;
+      color: #032B66 !important;
+      padding: 8px 15px !important;
+      border-radius: 8px !important;
+      text-decoration: none !important;
+      position: relative !important;
+      line-height: normal !important;
+      white-space: nowrap !important;
+      transition: background .25s ease, color .25s ease !important;
+    }
+
+    .ct-nav__links a::after,
+    .ct-nav__links li a::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    .ct-nav__links a:hover,
+    .ct-nav__links li a:hover {
+      background: #e8eef8 !important;
+      color: #032B66 !important;
+    }
+
+    .ct-nav__links a.active,
+    .ct-nav__links li a.active {
+      color: #FF6600 !important;
+      font-weight: 700 !important;
+      background: transparent !important;
+    }
+
+    .ct-nav.scrolled .ct-nav__links a,
+    .ct-nav.scrolled .ct-nav__links li a {
+      color: #032B66 !important;
+    }
+
+    .ct-nav.scrolled .ct-nav__links a.active,
+    .ct-nav.scrolled .ct-nav__links li a.active {
+      color: #FF6600 !important;
+    }
+
+    .ct-nav__cta {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px;
+      padding: 11px 24px;
+      background: #FF6600 !important;
+      color: #fff !important;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-decoration: none !important;
+      white-space: nowrap;
+      flex-shrink: 0;
+      box-shadow: 0 4px 18px rgba(255, 102, 0, .30);
+      transition: background .3s ease, transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .4s ease;
+    }
+
+    .ct-nav__cta:hover {
+      background: #e05500 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(255, 102, 0, .40);
+    }
+
+    .ct-nav__burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px 4px;
+      border-radius: 6px;
+      background: none !important;
+      border: none;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .ct-nav__burger span {
+      display: block;
+      width: 28px;
+      height: 3px;
+      background: #032B66;
+      border-radius: 20px;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+
+    .ct-nav__burger[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .ct-nav__burger[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .ct-nav__burger[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero>.navbar,
+    .hero>nav.navbar {
+      display: none !important;
+    }
+
+    body.drawer-open .ct-header {
+      z-index: 9997;
+    }
+
+    @media (min-width: 992px) {
+      .ct-nav__burger {
+        display: none !important;
+      }
+
+      .ct-nav__links {
+        display: flex !important;
+      }
+
+      .ct-nav__cta {
+        display: inline-flex !important;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .ct-nav__links {
+        display: none !important;
+      }
+
+      .ct-nav__cta {
+        display: none !important;
+      }
+
+      .ct-nav__burger {
+        display: flex !important;
+        margin-left: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ct-nav {
+        gap: 16px;
+        padding: 16px 4%;
+      }
+
+      .ct-nav__logo img {
+        width: 52px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+     OVERLAY
+  ═══════════════════════════════════════════ -->
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════
+     MOBILE DRAWER
+  ═══════════════════════════════════════════ -->
+  <nav class="nav-drawer" id="navDrawer" aria-label="Mobile navigation" aria-hidden="true">
+
+    <div class="drawer-header">
+      <a href="index.html" class="drawer-logo">
+        <img src="logo.png" alt="Listora">
+      </a>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close navigation">
+        <span class="drawer-close-icon">
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+
+    <ul class="drawer-links" role="list">
+      <li class="drawer-link-item" style="--i:0">
+        <a href="index.html" class="drawer-link">
+          <span class="drawer-link-num">01</span>
+          <span class="drawer-link-text">Home</span>
+          <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="drawer-link-item" style="--i:1">
+        <a href="about.html" class="drawer-link">
+          <span class="drawer-link-num">02</span>
+          <span class="drawer-link-text">About</span>
+          <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="drawer-link-item" style="--i:2">
+        <a href="service.html" class="drawer-link">
+          <span class="drawer-link-num">03</span>
+          <span class="drawer-link-text">Services</span>
+          <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="drawer-link-item" style="--i:3">
+        <a href="casestudies.html" class="drawer-link active">
+          <span class="drawer-link-num">04</span>
+          <span class="drawer-link-text">Case Studies</span>
+          <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="drawer-link-item" style="--i:4">
+        <a href="contact.html" class="drawer-link">
+          <span class="drawer-link-num">05</span>
+          <span class="drawer-link-text">Contact</span>
+          <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+
+    <div class="drawer-cta-wrap" style="--i:5">
+      <a href="contact.html" class="drawer-cta-btn">
+        <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
+        GET A GROWTH PLAN
+      </a>
+    </div>
+
+    <div class="drawer-footer" style="--i:6">
+      <p class="drawer-footer-text">Smart Marketing Agency for Real Estate Professionals</p>
+      <div class="drawer-social-links">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+      </div>
+    </div>
+
+    <div class="drawer-accent" aria-hidden="true"></div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+     UNIFIED NAVBAR — identical to index.html
+     Only change: "Case Studies" has class="active" aria-current="page"
+  ═══════════════════════════════════════════ -->
+  <header class="ct-header">
+    <nav class="ct-nav" id="ctNav" aria-label="Primary navigation">
+      <a href="index.html" class="ct-nav__logo">
+        <img src="logo.png" alt="Listora home">
+      </a>
+      <ul class="ct-nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="casestudies.html" class="active" aria-current="page">Case Studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="ct-nav__cta">
+        <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
+        GET A GROWTH PLAN
+      </a>
+      <button class="ct-nav__burger" id="menuBtn" aria-label="Open navigation" aria-expanded="false"
+        aria-controls="navDrawer">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+       HERO — Case Studies Page Hero
+    ═══════════════════════════════════════════ -->
+    <section class="cs-hero" aria-label="Case Studies Hero">
+      <div class="cs-hero__bg" aria-hidden="true">
+        <div class="cs-hero__orb cs-hero__orb--1"></div>
+        <div class="cs-hero__orb cs-hero__orb--2"></div>
+        <div class="cs-hero__grid"></div>
+      </div>
+      <div class="container cs-hero__container">
+        <div class="cs-hero__content">
+          <span class="section-tag cs-hero__tag txt-badge-anim">
+            <span class="tag-dot"></span>
+            <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+            Client Success Stories
+          </span>
+          <h1 class="cs-hero__headline">
+            Real Agents.<br>
+            Real <span class="gradient-text">Results.</span>
+          </h1>
+          <p class="cs-hero__sub">
+            Every strategy we execute is built around one goal: growing your real estate business. These are the stories
+            of agents and brokerages who trusted us — and what happened next.
+          </p>
+          <div class="cs-hero__actions">
+            <a href="#case-studies" class="cs-hero__btn-primary">
+              <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+              Explore Stories
+            </a>
+            <a href="contact.html" class="cs-hero__btn-ghost">
+              Get a Growth Plan
+            </a>
+          </div>
+        </div>
+        <div class="cs-hero__visual" aria-hidden="true">
+          <div class="cs-stat-card cs-stat-card--1">
+            <div class="cs-stat-card__icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="cs-stat-card__body">
+              <strong>3× More Leads</strong>
+              <span>Average per client in 90 days</span>
+            </div>
+          </div>
+          <div class="cs-stat-card cs-stat-card--2">
+            <div class="cs-stat-card__icon"><i class="fa-solid fa-gears"></i></div>
+            <div class="cs-stat-card__body">
+              <strong>CRM Automated</strong>
+              <span>Zero manual follow-ups</span>
+            </div>
+          </div>
+          <div class="cs-stat-card cs-stat-card--3">
+            <div class="cs-stat-card__icon"><i class="fa-solid fa-award"></i></div>
+            <div class="cs-stat-card__body">
+              <strong>50+ Clients</strong>
+              <span>Real estate professionals</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cs-hero__scroll" aria-hidden="true">
+        <div class="cs-hero__scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       TRUST STRIP
+    ═══════════════════════════════════════════ -->
+    <section class="cs-trust-strip" aria-label="Trust indicators">
+      <div class="container">
+        <div class="cs-trust-strip__inner">
+          <div class="cs-trust-item">
+            <i class="fa-solid fa-building" aria-hidden="true"></i>
+            <span>Real Estate Specialists</span>
+          </div>
+          <div class="cs-trust-divider" aria-hidden="true"></div>
+          <div class="cs-trust-item">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <span>Proven Frameworks</span>
+          </div>
+          <div class="cs-trust-divider" aria-hidden="true"></div>
+          <div class="cs-trust-item">
+            <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+            <span>Long-Term Partnerships</span>
+          </div>
+          <div class="cs-trust-divider" aria-hidden="true"></div>
+          <div class="cs-trust-item">
+            <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+            <span>Fast Implementation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       VIDEO TESTIMONIALS
+    ═══════════════════════════════════════════ -->
+    <section class="cs-video-section" id="testimonials" aria-labelledby="cs-video-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag txt-badge-anim">
+            <span class="tag-dot"></span>
+            <i class="fa-solid fa-video" aria-hidden="true"></i>
+            Video Testimonials
+          </span>
+          <h2 id="cs-video-heading">Hear It From <span class="gradient-text">Our Clients</span></h2>
+          <p>Real feedback from real estate professionals who scaled with Listora. No scripts. No actors.</p>
+        </div>
+
+        <div class="cs-video-grid">
+
+          <!-- Card 1 -->
+          <article class="cs-video-card service-card" data-index="0" aria-label="Real Estate Client Testimonial">
+            <div class="cs-vid-wrap">
+              <!-- Lazy: data-src loaded by JS on first interaction -->
+              <video class="cs-vid" data-src="Hansa Sharma.mp4" preload="none" playsinline
+                aria-label="Real estate client video testimonial" tabindex="-1">
+              </video>
+
+              <!-- Overlay: play button + expand button -->
+              <div class="cs-vid-overlay">
+                <!-- Loading spinner (shown while buffering) -->
+                <span class="cs-vid-spinner" aria-hidden="true"></span>
+
+                <!-- Play button -->
+                <button class="cs-play-btn" type="button" aria-label="Play testimonial video">
+                  <span class="cs-play-icon" aria-hidden="true">
+                    <svg width="22" height="26" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+                      <path d="M2 2L20 13L2 24V2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="cs-play-ring" aria-hidden="true"></span>
+                </button>
+
+                <!-- Expand / modal button -->
+                <button class="cs-expand-btn" type="button" aria-label="Watch in fullscreen">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M1 6V1H6M10 1H15V6M15 10V15H10M6 15H1V10" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <span class="cs-industry-tag">Real Estate</span>
+              <h3>Managing Leads Across Every Channel</h3>
+              <div class="cs-video-detail">
+                <span class="cs-detail-label">Challenge</span>
+                <p>Leads arriving from portals, social, and referrals with no unified view</p>
+              </div>
+              <div class="cs-video-detail">
+                <span class="cs-detail-label">Outcome</span>
+                <p>One centralized CRM workflow connecting every lead source</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="cs-video-card service-card" data-index="1" aria-label="Broker Client Testimonial">
+            <div class="cs-vid-wrap">
+              <video class="cs-vid" data-src="video-testimonial-2.mp4" preload="none" playsinline
+                aria-label="Broker client video testimonial" tabindex="-1">
+              </video>
+
+              <div class="cs-vid-overlay" aria-hidden="true">
+                <span class="cs-vid-spinner" aria-hidden="true"></span>
+                <button class="cs-play-btn" type="button" aria-label="Play testimonial video">
+                  <span class="cs-play-icon" aria-hidden="true">
+                    <svg width="22" height="26" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+                      <path d="M2 2L20 13L2 24V2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="cs-play-ring" aria-hidden="true"></span>
+                </button>
+                <button class="cs-expand-btn" type="button" aria-label="Watch in fullscreen">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M1 6V1H6M10 1H15V6M15 10V15H10M6 15H1V10" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <span class="cs-industry-tag">Brokerage</span>
+              <h3>From Inconsistent Follow-Ups to Automated Nurturing</h3>
+              <div class="cs-video-detail">
+                <span class="cs-detail-label">Challenge</span>
+                <p>Clients slipping through the cracks due to manual follow-up processes</p>
+              </div>
+              <div class="cs-video-detail">
+                <span class="cs-detail-label">Outcome</span>
+                <p>Fully automated nurture sequences that engage prospects at every stage</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="cs-video-card service-card" data-index="2" aria-label="Team Lead Client Testimonial">
+            <div class="cs-vid-wrap">
+              <video class="cs-vid" data-src="video-testimonial-3.mp4" preload="none" playsinline
+                aria-label="Team lead client video testimonial" tabindex="-1">
+              </video>
+
+              <div class="cs-vid-overlay" aria-hidden="true">
+                <span class="cs-vid-spinner" aria-hidden="true"></span>
+                <button class="cs-play-btn" type="button" aria-label="Play testimonial video">
+                  <span class="cs-play-icon" aria-hidden="true">
+                    <svg width="22" height="26" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+                      <path d="M2 2L20 13L2 24V2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="cs-play-ring" aria-hidden="true"></span>
+                </button>
+                <button class="cs-expand-btn" type="button" aria-label="Watch in fullscreen">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M1 6V1H6M10 1H15V6M15 10V15H10M6 15H1V10" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <span class="cs-industry-tag">Team Lead</span>
+              <h3>Bringing Order to a Scattered Sales Process</h3>
+              <div class="cs-video-detail">
+                <span class="cs-detail-label">Challenge</span>
+                <p>Customer info split across spreadsheets, notes, and messaging apps</p>
+              </div>
+              <div class="cs-video-detail">
+                <span class="cs-detail-label">Outcome</span>
+                <p>A single operations dashboard the whole team uses daily</p>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /.cs-video-grid -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       VIDEO MODAL (appended once, reused for all cards)
+    ═══════════════════════════════════════════ -->
+    <div class="cs-modal" id="csVideoModal" role="dialog" aria-modal="true" aria-label="Video testimonial"
+      aria-hidden="true">
+      <div class="cs-modal__overlay" id="csModalOverlay" aria-hidden="true"></div>
+      <div class="cs-modal__shell">
+        <button class="cs-modal__close" id="csModalClose" type="button" aria-label="Close video">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M2 2L16 16M16 2L2 16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          </svg>
+        </button>
+        <div class="cs-modal__vid-wrap">
+          <video class="cs-modal__vid" id="csModalVid" controls playsinline aria-label="Testimonial video"></video>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+       EDITORIAL CASE STUDIES
+    ═══════════════════════════════════════════ -->
+    <section class="cs-stories-section" id="case-studies" aria-labelledby="cs-stories-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag txt-badge-anim">
+            <span class="tag-dot"></span>
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            Editorial Case Studies
+          </span>
+          <h2 id="cs-stories-heading">The Work Behind <span class="gradient-text">The Results</span></h2>
+          <p>Deep-dive breakdowns of the strategies, systems, and execution that produced measurable growth.</p>
+        </div>
+
+        <!-- Case Study 1 -->
+        <article class="cs-story cs-story--right" aria-labelledby="cs1-title">
+          <div class="cs-story__image-col">
+            <div class="cs-story__image-wrap">
+              <img src="images/crm-dashboard.jpg" alt="CRM pipeline dashboard built for a real estate agency"
+                loading="lazy" class="cs-story__img" />
+              <div class="cs-story__image-accent" aria-hidden="true"></div>
+              <div class="cs-story__floating-tag">
+                <i class="fa-solid fa-house-chimney" aria-hidden="true"></i>
+                Real Estate CRM
+              </div>
+            </div>
+          </div>
+          <div class="cs-story__content-col">
+            <span class="cs-story__number" aria-hidden="true">01</span>
+            <h3 id="cs1-title" class="cs-story__title">The Real Estate Agency That Lost Leads Every Week</h3>
+            <div class="cs-story__blocks">
+              <div class="cs-story__block">
+                <span class="cs-story__block-label">
+                  <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                  Challenge
+                </span>
+                <p>An established real estate team was receiving inquiries through three property portals, an Instagram
+                  page, a Facebook group, and word-of-mouth referrals. Each source had its own notification method.
+                  Agents were missing follow-up windows because no single view existed.</p>
+              </div>
+              <div class="cs-story__block">
+                <span class="cs-story__block-label">
+                  <i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>
+                  Approach
+                </span>
+                <p>We ran a discovery week mapping every touch-point from first inquiry to signed contract. We
+                  identified
+                  the four most critical handoff moments where leads were being lost and prioritized those first.</p>
+              </div>
+              <div class="cs-story__block">
+                <span class="cs-story__block-label">
+                  <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                  Solution
+                </span>
+                <p>A centralized CRM pulling in all lead sources, with automatic stage assignment based on inquiry type,
+                  a 5-step follow-up sequence per lead type, and a shared team view showing every open deal in a single
+                  pipeline.</p>
+              </div>
+              <div class="cs-story__block cs-story__block--outcome">
+                <span class="cs-story__block-label">
+                  <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                  Outcome
+                </span>
+                <p>The team now operates from one screen. No lead goes uncontacted. The agency has a clear picture of
+                  their pipeline at all times — something they never had before.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 2 -->
+        <article class="cs-story cs-story--left" aria-labelledby="cs2-title">
+          <div class="cs-story__image-col">
+            <div class="cs-story__image-wrap">
+              <img src="images/workflow-builder.jpg" alt="Automated follow-up workflow built for a real estate broker"
+                loading="lazy" class="cs-story__img" />
+              <div class="cs-story__image-accent" aria-hidden="true"></div>
+              <div class="cs-story__floating-tag">
+                <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                Lead Automation
+              </div>
+            </div>
+          </div>
+          <div class="cs-story__content-col">
+            <span class="cs-story__number" aria-hidden="true">02</span>
+            <h3 id="cs2-title" class="cs-story__title">The Broker Who Relied on Memory to Follow Up</h3>
+            <div class="cs-story__blocks">
+              <div class="cs-story__block">
+                <span class="cs-story__block-label">
+                  <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                  Challenge
+                </span>
+                <p>A top-producing broker was managing relationships entirely through individual memory and ad-hoc
+                  calendar reminders. Proposals would go out and then sit without response because no one was
+                  systematically following up.</p>
+              </div>
+              <div class="cs-story__block">
+                <span class="cs-story__block-label">
+                  <i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>
+                  Approach
+                </span>
+                <p>We mapped the full client journey from first enquiry to referral. We interviewed the agent and two
+                  assistants to understand where attention was going and where it wasn't, then scored each gap by
+                  revenue impact.</p>
+              </div>
+              <div class="cs-story__block">
+                <span class="cs-story__block-label">
+                  <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                  Solution
+                </span>
+                <p>A structured CRM with automated nurture sequences personalized by property type, triggered at key
+                  moments in the buying journey. Proposals now trigger follow-up chains automatically with human
+                  touchpoints built in at the right moments.</p>
+              </div>
+              <div class="cs-story__block cs-story__block--outcome">
+                <span class="cs-story__block-label">
+                  <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                  Outcome
+                </span>
+                <p>The broker runs a reliable, repeatable business development process. The team spends time with
+                  clients, not chasing administrative tasks across three inboxes.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 3 -->
+        <article class="cs-story cs-story--right" aria-labelledby="cs3-title">
+          <div class="cs-story__image-col">
+            <div class="cs-story__image-wrap">
+              <img src="images/reporting-dashboard.jpg"
+                alt="Operations reporting dashboard built for a real estate team" loading="lazy"
+                class="cs-story__img" />
+              <div class="cs-story__image-accent" aria-hidden="true"></div>
+              <div class="cs-story__floating-tag">
+                <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                Lead Generation
+              </div>
+            </div>
+          </div>
+          <div class="cs-story__content-col">
+            <span class="cs-story__number" aria-hidden="true">03</span>
+            <h3 id="cs3-title" class="cs-story__title">The Real Estate Team Drowning in Ad Spend With No ROI</h3>
+            <div class="cs-story__blocks">
+              <div class="cs-story__block">
+                <span class="cs-story__block-label">
+                  <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                  Challenge
+                </span>
+                <p>A growing real estate team was spending heavily on paid ads but had no visibility into what was
+                  converting. Their cost per acquisition was invisible, and they had no idea which campaigns were
+                  producing closings.</p>
+              </div>
+              <div class="cs-story__block">
+                <span class="cs-story__block-label">
+                  <i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>
+                  Approach
+                </span>
+                <p>We audited their full ad stack, CRM, and attribution model. Within the first week we identified three
+                  campaigns consuming 60% of budget that had never produced a single qualified lead.</p>
+              </div>
+              <div class="cs-story__block">
+                <span class="cs-story__block-label">
+                  <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                  Solution
+                </span>
+                <p>A rebuilt performance ad system with proper tracking, an automated lead scoring model inside the CRM,
+                  and a live reporting dashboard showing cost per lead, cost per appointment, and cost per closing in
+                  real time.</p>
+              </div>
+              <div class="cs-story__block cs-story__block--outcome">
+                <span class="cs-story__block-label">
+                  <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                  Outcome
+                </span>
+                <p>The team cut their ad budget by 35% and tripled qualified lead volume by reallocating to what
+                  actually worked. They now make data-driven decisions every week — not guesses.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       BEFORE & AFTER WORKFLOW
+    ═══════════════════════════════════════════ -->
+    <section class="cs-workflow-section" aria-labelledby="cs-wf-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag txt-badge-anim">
+            <span class="tag-dot"></span>
+            <i class="fa-solid fa-arrows-left-right" aria-hidden="true"></i>
+            Before &amp; After
+          </span>
+          <h2 id="cs-wf-heading">How Operations <span class="gradient-text">Transform</span></h2>
+          <p>The difference between a real estate business running on chaos versus one running on systems.</p>
+        </div>
+
+        <div class="cs-workflow-grid">
+
+          <div class="cs-workflow-comparison listora-advantage-card">
+            <div class="cs-wf-before">
+              <div class="cs-wf-badge cs-wf-badge--before">Before</div>
+              <h4 class="cs-wf-title">Lead Management</h4>
+              <ul class="cs-wf-list">
+                <li class="cs-wf-item cs-wf-item--pain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
+                  <span>Leads spread across email, DMs, and portal apps</span>
+                </li>
+                <li class="cs-wf-item cs-wf-item--pain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
+                  <span>Manual follow-up depending on memory</span>
+                </li>
+                <li class="cs-wf-item cs-wf-item--pain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
+                  <span>No clear view of pipeline or close rate</span>
+                </li>
+              </ul>
+            </div>
+            <div class="cs-wf-divider" aria-hidden="true">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="cs-wf-after">
+              <div class="cs-wf-badge cs-wf-badge--after">After</div>
+              <h4 class="cs-wf-title">Lead Management</h4>
+              <ul class="cs-wf-list">
+                <li class="cs-wf-item cs-wf-item--gain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                  <span>All leads captured in one unified CRM pipeline</span>
+                </li>
+                <li class="cs-wf-item cs-wf-item--gain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                  <span>Automated follow-up sequences for every stage</span>
+                </li>
+                <li class="cs-wf-item cs-wf-item--gain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                  <span>Real-time pipeline visibility across the team</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cs-workflow-comparison listora-advantage-card">
+            <div class="cs-wf-before">
+              <div class="cs-wf-badge cs-wf-badge--before">Before</div>
+              <h4 class="cs-wf-title">Marketing & Content</h4>
+              <ul class="cs-wf-list">
+                <li class="cs-wf-item cs-wf-item--pain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
+                  <span>Posting once a week with no strategy</span>
+                </li>
+                <li class="cs-wf-item cs-wf-item--pain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
+                  <span>No engagement or brand consistency</span>
+                </li>
+                <li class="cs-wf-item cs-wf-item--pain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
+                  <span>Zero inbound leads from organic channels</span>
+                </li>
+              </ul>
+            </div>
+            <div class="cs-wf-divider" aria-hidden="true">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="cs-wf-after">
+              <div class="cs-wf-badge cs-wf-badge--after">After</div>
+              <h4 class="cs-wf-title">Marketing & Content</h4>
+              <ul class="cs-wf-list">
+                <li class="cs-wf-item cs-wf-item--gain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                  <span>Consistent multi-platform content calendar</span>
+                </li>
+                <li class="cs-wf-item cs-wf-item--gain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                  <span>Professional brand identity across all channels</span>
+                </li>
+                <li class="cs-wf-item cs-wf-item--gain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                  <span>Organic leads growing month over month</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cs-workflow-comparison listora-advantage-card">
+            <div class="cs-wf-before">
+              <div class="cs-wf-badge cs-wf-badge--before">Before</div>
+              <h4 class="cs-wf-title">Reporting & ROI</h4>
+              <ul class="cs-wf-list">
+                <li class="cs-wf-item cs-wf-item--pain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
+                  <span>Ad spend with no idea what converts</span>
+                </li>
+                <li class="cs-wf-item cs-wf-item--pain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
+                  <span>No visibility until end of month</span>
+                </li>
+                <li class="cs-wf-item cs-wf-item--pain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
+                  <span>Hours wasted compiling reports manually</span>
+                </li>
+              </ul>
+            </div>
+            <div class="cs-wf-divider" aria-hidden="true">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="cs-wf-after">
+              <div class="cs-wf-badge cs-wf-badge--after">After</div>
+              <h4 class="cs-wf-title">Reporting & ROI</h4>
+              <ul class="cs-wf-list">
+                <li class="cs-wf-item cs-wf-item--gain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                  <span>Live dashboards showing cost per lead and per close</span>
+                </li>
+                <li class="cs-wf-item cs-wf-item--gain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                  <span>At-a-glance performance from any device</span>
+                </li>
+                <li class="cs-wf-item cs-wf-item--gain">
+                  <span class="cs-wf-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                  <span>Hours reclaimed for high-value client work</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       FEEDBACK WALL
+    ═══════════════════════════════════════════ -->
+    <section class="cs-feedback-section" aria-labelledby="cs-feedback-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag txt-badge-anim">
+            <span class="tag-dot"></span>
+            <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
+            Client Feedback
+          </span>
+          <h2 id="cs-feedback-heading">What Clients <span class="gradient-text">Actually Say</span></h2>
+          <p>Unfiltered feedback from real estate professionals across the country.</p>
+        </div>
+
+        <div class="cs-feedback-grid">
+
+          <blockquote class="cs-feedback-card listora-advantage-card">
+            <div class="cs-feedback-stars" aria-label="5 stars" role="img">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <p class="cs-feedback-text">"The process was genuinely different to anything we'd tried before. They took
+              the time to understand how we actually work before suggesting anything."</p>
+            <footer class="cs-feedback-author">
+              <div class="cs-feedback-avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></div>
+              <div class="cs-feedback-info">
+                <cite class="cs-feedback-name">Operations Director</cite>
+                <span class="cs-feedback-industry">Real Estate Brokerage</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="cs-feedback-card cs-feedback-card--accent listora-advantage-card">
+            <div class="cs-feedback-stars" aria-label="5 stars" role="img">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <p class="cs-feedback-text">"Our team went from dreading admin to actually using the CRM every day. That's
+              a better result than I expected."</p>
+            <footer class="cs-feedback-author">
+              <div class="cs-feedback-avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></div>
+              <div class="cs-feedback-info">
+                <cite class="cs-feedback-name">Team Lead</cite>
+                <span class="cs-feedback-industry">Residential Sales</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="cs-feedback-card listora-advantage-card">
+            <div class="cs-feedback-stars" aria-label="5 stars" role="img">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <p class="cs-feedback-text">"For the first time I actually know where every prospect is in my pipeline. It
+              sounds simple but it changes everything about how I run my business."</p>
+            <footer class="cs-feedback-author">
+              <div class="cs-feedback-avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></div>
+              <div class="cs-feedback-info">
+                <cite class="cs-feedback-name">Independent Realtor</cite>
+                <span class="cs-feedback-industry">Luxury Market</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="cs-feedback-card listora-advantage-card">
+            <div class="cs-feedback-stars" aria-label="5 stars" role="img">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <p class="cs-feedback-text">"I was sceptical that a CRM would actually stick with my team. Listora built it
+              so that it fit us — not the other way around."</p>
+            <footer class="cs-feedback-author">
+              <div class="cs-feedback-avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></div>
+              <div class="cs-feedback-info">
+                <cite class="cs-feedback-name">Managing Broker</cite>
+                <span class="cs-feedback-industry">Commercial &amp; Residential</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="cs-feedback-card listora-advantage-card">
+            <div class="cs-feedback-stars" aria-label="5 stars" role="img">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <p class="cs-feedback-text">"What impressed me most was the discovery phase. They found gaps in our
+              marketing process we didn't even know we had."</p>
+            <footer class="cs-feedback-author">
+              <div class="cs-feedback-avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></div>
+              <div class="cs-feedback-info">
+                <cite class="cs-feedback-name">Agency Founder</cite>
+                <span class="cs-feedback-industry">Multi-Family Specialist</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="cs-feedback-card cs-feedback-card--large listora-advantage-card">
+            <div class="cs-feedback-stars" aria-label="5 stars" role="img">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <p class="cs-feedback-text">"The automation they set up for our lead follow-ups was a game changer. We had
+              buyers going cold for weeks before. Now the system handles all of that — and our close rate is up
+              significantly."</p>
+            <footer class="cs-feedback-author">
+              <div class="cs-feedback-avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></div>
+              <div class="cs-feedback-info">
+                <cite class="cs-feedback-name">Director of Sales</cite>
+                <span class="cs-feedback-industry">Top-50 Brokerage</span>
+              </div>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       FAQ
+    ═══════════════════════════════════════════ -->
+    <section class="cs-faq-section" aria-labelledby="cs-faq-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag txt-badge-anim">
+            <span class="tag-dot"></span>
+            <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+            Common Questions
+          </span>
+          <h2 id="cs-faq-heading">What People <span class="gradient-text">Ask First</span></h2>
+          <p>Everything you need to know before booking a strategy call.</p>
+        </div>
+
+        <div class="cs-faq-list" role="list">
+
+          <div class="cs-faq-item" role="listitem" data-index="0">
+            <button class="cs-faq-trigger" aria-expanded="false" aria-controls="cs-faq-1">
+              <span class="cs-faq-question">How long does it take to see results?</span>
+              <span class="cs-faq-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="cs-faq-answer" id="cs-faq-1" role="region" aria-hidden="true">
+              <p>Most clients see meaningful lead volume improvements within the first 60–90 days. CRM automation
+                systems typically show measurable time savings in the first two weeks after launch. We set clear KPIs
+                during onboarding so you always know what to expect.</p>
+            </div>
+          </div>
+
+          <div class="cs-faq-item" role="listitem" data-index="1">
+            <button class="cs-faq-trigger" aria-expanded="false" aria-controls="cs-faq-2">
+              <span class="cs-faq-question">Do I need to be tech-savvy to use what you build?</span>
+              <span class="cs-faq-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="cs-faq-answer" id="cs-faq-2" role="region" aria-hidden="true">
+              <p>Not at all. We build for busy agents and brokers who need systems that work without a learning curve.
+                Every deliverable comes with training, documentation, and a support window — written in plain language,
+                not tech speak.</p>
+            </div>
+          </div>
+
+          <div class="cs-faq-item" role="listitem" data-index="2">
+            <button class="cs-faq-trigger" aria-expanded="false" aria-controls="cs-faq-3">
+              <span class="cs-faq-question">Which CRM platforms do you work with?</span>
+              <span class="cs-faq-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="cs-faq-answer" id="cs-faq-3" role="region" aria-hidden="true">
+              <p>We work across leading real estate CRM platforms and recommend the right one based on your team size,
+                budget, and workflow. We're platform-agnostic — we choose the tool that fits your business, not the one
+                with the best referral commission.</p>
+            </div>
+          </div>
+
+          <div class="cs-faq-item" role="listitem" data-index="3">
+            <button class="cs-faq-trigger" aria-expanded="false" aria-controls="cs-faq-4">
+              <span class="cs-faq-question">Do you work with solo agents or only teams?</span>
+              <span class="cs-faq-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="cs-faq-answer" id="cs-faq-4" role="region" aria-hidden="true">
+              <p>Both. Some of our most impactful work is with solo agents who've outgrown spreadsheets and need systems
+                that support how they operate. Teams benefit from shared pipeline visibility and automated handoffs.
+                The scale of the solution matches the scale of the business.</p>
+            </div>
+          </div>
+
+          <div class="cs-faq-item" role="listitem" data-index="4">
+            <button class="cs-faq-trigger" aria-expanded="false" aria-controls="cs-faq-5">
+              <span class="cs-faq-question">What does the process look like?</span>
+              <span class="cs-faq-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="cs-faq-answer" id="cs-faq-5" role="region" aria-hidden="true">
+              <p>We start with a free strategy call to understand your current setup. From there: a discovery phase
+                where we audit your brand and opportunities, a strategy phase where we build your growth roadmap,
+                implementation, optimization, and then we scale together. No pitch decks. No lock-in. Just a focused
+                conversation about your business.</p>
+            </div>
+          </div>
+
+          <div class="cs-faq-item" role="listitem" data-index="5">
+            <button class="cs-faq-trigger" aria-expanded="false" aria-controls="cs-faq-6">
+              <span class="cs-faq-question">How do we get started?</span>
+              <span class="cs-faq-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="cs-faq-answer" id="cs-faq-6" role="region" aria-hidden="true">
+              <p>Book a free Growth Audit call through our contact page. We'll spend time understanding your current
+                setup, identify your highest-leverage growth opportunities, and outline exactly what a partnership could
+                look like. No commitment required.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+     FOOTER — identical to index.html
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="footer-inner">
+
+      <!-- Brand Column -->
+      <div class="footer-col footer-col--brand">
+        <a href="#" class="brand-logo" aria-label="Listora home">
+          <img src="logo 2.png" alt="Listora">
+        </a>
+        <p class="footer-tagline">Smart Marketing Agency for Real Estate Professionals</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- Company Column -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                aria-hidden="true"></i></a></li>
+          <li><a href="casestudies.html">Case Studies <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                aria-hidden="true"></i></a></li>
+          <li><a href="contact.html">Contact Us <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+
+      <!-- Services Column -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Real Estate Marketing <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                aria-hidden="true"></i></a></li>
+          <li><a href="#">Lead Generation <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                aria-hidden="true"></i></a></li>
+          <li><a href="#">CRM Management <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                aria-hidden="true"></i></a></li>
+          <li><a href="#">Social Media Management <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Column -->
+      <div class="footer-col footer-col--newsletter">
+        <h4>Free Marketing Audit</h4>
+        <p class="newsletter-desc">Receive a personalised audit with expert recommendations to improve visibility, lead
+          generation, and business growth.</p>
+        <div class="newsletter" role="group" aria-label="Email newsletter signup">
+          <label for="cs-email" class="sr-only">Your email address</label>
+          <input type="email" id="cs-email" placeholder="Enter your email..." autocomplete="email">
+          <button id="cs-sub-btn" aria-label="Subscribe">
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+        <p class="newsletter-msg" id="cs-msg" role="status" aria-live="polite"></p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Listora Digital Media &nbsp;&middot;&nbsp; All rights reserved</p>
+    </div>
+
+  </footer>
+
+  <!-- Shared scripts -->
+  <script src="script.js"></script>
+  <!-- Unified mobile drawer (full swipe + focus-trap) -->
+  <script src="drawer.js"></script>
+  <!-- Case Studies page scripts -->
+  <script src="casestudies.js"></script>
+
+  <!-- casestudies.js handles navbar scroll + all video logic -->
+
+</body>
+
+</html>
