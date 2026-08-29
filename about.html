@@ -1,0 +1,889 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listora Digital Media – About</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome -->
+        <link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="about.css" />
+    <!-- Drawer / Mobile Nav -->
+    <link rel="stylesheet" href="drawer.css" />
+    <!-- Responsive Audit Fixes -->
+ 
+
+    <!-- ── UNIFIED NAVBAR STYLES — identical to index.html ── -->
+    <style>
+        .ct-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+        }
+
+        .ct-nav {
+            display: flex !important;
+            align-items: center;
+            gap: 32px;
+            padding: 20px 5% 20px 2%;
+            background: rgba(255, 255, 255, 0.0);
+            transition: background .35s ease, box-shadow .35s ease, padding .35s ease;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .ct-nav.scrolled {
+            background: rgba(255, 255, 255, .97) !important;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 2px 24px rgba(3, 43, 102, .08);
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        .ct-nav__logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+
+        .ct-nav__logo img {
+            width: 62px;
+            height: auto;
+            display: block;
+        }
+
+        .ct-nav__links {
+            display: flex !important;
+            align-items: center !important;
+            gap: 4px !important;
+            margin-left: auto !important;
+            list-style: none !important;
+            padding: 0 !important;
+            flex-direction: row !important;
+            position: static !important;
+            background: transparent !important;
+            max-height: none !important;
+        }
+
+        .ct-nav__links li {
+            width: auto !important;
+            text-align: left !important;
+            padding: 0 !important;
+            border: none !important;
+        }
+
+        .ct-nav__links a,
+        .ct-nav__links li a {
+            display: inline-block !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            color: #032B66 !important;
+            padding: 8px 15px !important;
+            border-radius: 8px !important;
+            text-decoration: none !important;
+            position: relative !important;
+            line-height: normal !important;
+            white-space: nowrap !important;
+            transition: background .25s ease, color .25s ease !important;
+        }
+
+        .ct-nav__links a::after,
+        .ct-nav__links li a::after {
+            display: none !important;
+            content: none !important;
+        }
+
+        .ct-nav__links a:hover,
+        .ct-nav__links li a:hover {
+            background: #e8eef8 !important;
+            color: #032B66 !important;
+        }
+
+        .ct-nav__links a.active,
+        .ct-nav__links li a.active {
+            color: #FF6600 !important;
+            font-weight: 700 !important;
+            background: transparent !important;
+        }
+
+        .ct-nav.scrolled .ct-nav__links a,
+        .ct-nav.scrolled .ct-nav__links li a {
+            color: #032B66 !important;
+        }
+
+        .ct-nav.scrolled .ct-nav__links a.active,
+        .ct-nav.scrolled .ct-nav__links li a.active {
+            color: #FF6600 !important;
+        }
+
+        .ct-nav__cta {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px;
+            padding: 11px 24px;
+            background: #FF6600 !important;
+            color: #fff !important;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-decoration: none !important;
+            white-space: nowrap;
+            flex-shrink: 0;
+            box-shadow: 0 4px 18px rgba(255, 102, 0, .30);
+            transition: background .3s ease, transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .4s ease;
+        }
+
+        .ct-nav__cta:hover {
+            background: #e05500 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 26px rgba(255, 102, 0, .40);
+        }
+
+        .ct-nav__burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 6px 4px;
+            border-radius: 6px;
+            background: none !important;
+            border: none;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .ct-nav__burger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #032B66;
+            border-radius: 20px;
+            transition: transform .3s ease, opacity .3s ease;
+        }
+
+        .ct-nav__burger[aria-expanded="true"] span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .ct-nav__burger[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .ct-nav__burger[aria-expanded="true"] span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        body.drawer-open .ct-header {
+            z-index: 9997;
+        }
+
+        @media (min-width: 992px) {
+            .ct-nav__burger {
+                display: none !important;
+            }
+
+            .ct-nav__links {
+                display: flex !important;
+            }
+
+            .ct-nav__cta {
+                display: inline-flex !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ct-nav__links {
+                display: none !important;
+            }
+
+            .ct-nav__cta {
+                display: none !important;
+            }
+
+            .ct-nav__burger {
+                display: flex !important;
+                margin-left: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ct-nav {
+                gap: 16px;
+                padding: 16px 4%;
+            }
+
+            .ct-nav__logo img {
+                width: 52px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- OVERLAY -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- MOBILE DRAWER -->
+    <nav class="nav-drawer" id="navDrawer" aria-label="Mobile navigation" aria-hidden="true">
+        <div class="drawer-header">
+            <a href="index.html" class="drawer-logo"><img src="logo.png" alt="Listora"></a>
+            <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close navigation">
+                <span class="drawer-close-icon"><span></span><span></span></span>
+            </button>
+        </div>
+        <ul class="drawer-links" role="list">
+            <li class="drawer-link-item" style="--i:0">
+                <a href="index.html" class="drawer-link">
+                    <span class="drawer-link-num">01</span>
+                    <span class="drawer-link-text">Home</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:1">
+                <a href="about.html" class="drawer-link active">
+                    <span class="drawer-link-num">02</span>
+                    <span class="drawer-link-text">About</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:2">
+                <a href="service.html" class="drawer-link">
+                    <span class="drawer-link-num">03</span>
+                    <span class="drawer-link-text">Services</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:3">
+                <a href="casestudies.html" class="drawer-link">
+                    <span class="drawer-link-num">04</span>
+                    <span class="drawer-link-text">Case Studies</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:4">
+                <a href="contact.html" class="drawer-link">
+                    <span class="drawer-link-num">05</span>
+                    <span class="drawer-link-text">Contact</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="drawer-cta-wrap" style="--i:5">
+            <a href="contact.html" class="drawer-cta-btn">
+                <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>GET A GROWTH PLAN
+            </a>
+        </div>
+        <div class="drawer-footer" style="--i:6">
+            <p class="drawer-footer-text">Smart Marketing Agency for Real Estate Professionals</p>
+            <div class="drawer-social-links">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="drawer-accent" aria-hidden="true"></div>
+    </nav>
+
+    <!-- NAVBAR -->
+    <header class="ct-header">
+        <nav class="ct-nav" id="ctNav" aria-label="Primary navigation">
+            <a href="index.html" class="ct-nav__logo">
+                <img src="logo.png" alt="Listora home" id="navLogo">
+            </a>
+            <ul class="ct-nav__links" role="list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active" aria-current="page">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="casestudies.html">Case Studies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="ct-nav__cta">
+                <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>GET A GROWTH PLAN
+            </a>
+            <button class="ct-nav__burger" id="menuBtn" aria-label="Open navigation" aria-expanded="false"
+                aria-controls="navDrawer">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+
+    <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+    <section class="hero-section" id="hero" style="padding-top: 250px;">
+        <div class="container hero-inner">
+
+            <!-- Left: Text Content -->
+            <div class="hero-content">
+
+
+                <h1 class="hero-heading">
+                    About Listora<br />Digital Media
+                </h1>
+
+                <!-- Orange underline accent -->
+                <div class="orange-line"></div>
+
+                <p class="hero-subtext">
+                    We help real estate professionals generate more leads,
+                    streamline their systems, and scale their business with
+                    powerful marketing and CRM solutions.
+                </p>
+
+                <a href="#contact" class="btn btn-primary">Book a Consultation &rarr;</a>
+            </div>
+
+            <!-- Right: Hero Image -->
+            <div class="hero-image-wrap">
+                <img src="s5.png" alt="Luxury real estate property" class="hero-img" />
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       WHO WE ARE SECTION
+  ============================================================ -->
+    <section class="about-section" id="about">
+        <div class="container about-inner">
+
+            <!-- Left: Two stacked images (office + logo) -->
+            <div class="about-images">
+                <img src="s6.png" alt="Listora office interior" class="about-img-top" />
+            </div>
+
+            <!-- Right: Text Content -->
+            <div class="about-content">
+                <p class="section-label">WHO WE ARE</p>
+                <h2 class="section-heading">
+                    A Growth Partner for<br />Real Estate Professionals
+                </h2>
+                <p class="section-text">
+                    Listora Digital Media is a specialized offshore digital marketing
+                    and CRM management agency helping real estate professionals
+                    strengthen their online presence, generate quality leads, and
+                    build scalable business systems.
+                </p>
+                <p class="section-text">
+                    Our team becomes an extension of your business, handling your
+                    marketing, systems, and daily operations—so you can focus on
+                    what you do best: closing deals and growing your business.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       OUR STORY SECTION
+  ============================================================ -->
+    <section class="story-section" id="story">
+        <div class="container story-inner">
+
+            <!-- Left: Text Content -->
+            <div class="story-content">
+                <p class="section-label">OUR STORY</p>
+                <h2 class="section-heading">
+                    Built to Solve Real<br />Problems in Real Estate
+                </h2>
+                <p class="section-text">
+                    We started Listora Digital Media after seeing the same challenges
+                    repeated across the real estate industry—unpredictable lead flow,
+                    disorganized systems, and time-consuming tasks keeping agents and
+                    teams from growing.
+                </p>
+                <p class="section-text">We built Listora to change that.</p>
+                <p class="section-text">
+                    Our goal is simple: help realtors implement proven marketing
+                    strategies and CRM systems that create consistent leads, stronger
+                    relationships, and long-term growth.
+                </p>
+
+                <!-- Pull Quote -->
+                <blockquote class="story-quote">
+                    <span class="quote-mark">&ldquo;</span>
+                    <p>
+                        We built Listora because most realtors
+                        don't need more complexity, they need
+                        better systems.
+                    </p>
+                </blockquote>
+            </div>
+
+            <!-- Right: Story Image -->
+            <div class="story-image-wrap">
+                <img src="s7.png" alt="Modern city skyline from a luxury terrace" class="story-img" />
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       MISSION & VISION SECTION
+  ============================================================ -->
+    <section class="mission-section" id="mission">
+        <div class="container mission-inner">
+
+            <!-- Mission Block -->
+            <div class="mission-block">
+                <div class="mission-icon">
+                    <!-- Target / crosshair SVG icon -->
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="#F97316" stroke-width="2" />
+                        <circle cx="20" cy="20" r="10" stroke="#F97316" stroke-width="2" />
+                        <circle cx="20" cy="20" r="3" fill="#F97316" />
+                        <line x1="20" y1="2" x2="20" y2="10" stroke="#F97316" stroke-width="2" />
+                        <line x1="20" y1="30" x2="20" y2="38" stroke="#F97316" stroke-width="2" />
+                        <line x1="2" y1="20" x2="10" y2="20" stroke="#F97316" stroke-width="2" />
+                        <line x1="30" y1="20" x2="38" y2="20" stroke="#F97316" stroke-width="2" />
+                    </svg>
+                </div>
+                <p class="mission-label">MISSION</p>
+                <h3 class="mission-heading">Empower Realtors to Grow</h3>
+                <p class="mission-text">
+                    Help realtors grow through smart marketing and powerful CRM systems
+                    that create predictable results and long-term success.
+                </p>
+            </div>
+
+            <!-- Divider line -->
+            <div class="mission-divider"></div>
+
+            <!-- Vision Block -->
+            <div class="mission-block">
+                <div class="mission-icon">
+                    <!-- Eye SVG icon -->
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="20" cy="20" rx="18" ry="11" stroke="#F97316" stroke-width="2" />
+                        <circle cx="20" cy="20" r="5" stroke="#F97316" stroke-width="2" />
+                        <circle cx="21" cy="19" r="1.5" fill="#F97316" />
+                    </svg>
+                </div>
+                <p class="mission-label">VISION</p>
+                <h3 class="mission-heading">Global Real Estate Growth Partner</h3>
+                <p class="mission-text">
+                    Become a trusted digital growth partner for real estate professionals
+                    and teams worldwide, delivering systems, support, and results.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==============================
+       ECOSYSTEM SECTION
+  ============================== -->
+    <section class="logo-section">
+
+        <!-- Section header -->
+        <div class="section-header">
+            <h2 class="section-title">Our Ecosystem</h2>
+        </div>
+
+        <!-- SVG canvas for dashed connection lines (drawn by JS) -->
+        <svg class="logo-lines" id="ecosystemLines" aria-hidden="true"></svg>
+
+        <!-- Ecosystem grid wrapper -->
+        <div class="logo-grid" id="ecosystemGrid">
+
+            <!-- ── Logo Center ── -->
+            <div class="logo-center" id="logoCenter">
+                <div class="logo-glow"></div>
+                <!--
+          REPLACE THIS IMAGE:
+          Put your PNG file inside an "images/" folder
+          and update the src below.
+        -->
+                <img src="NEW2.png" alt="Listora Digital Media Logo" class="logo-img" />
+                <p class="logo-tagline">Listora Digital Media</p>
+            </div>
+
+            <!-- ── Card 1 — Growth (Top Left) ── -->
+            <div class="logo-card" data-position="top-left" id="card-1">
+                <div class="card-number">01</div>
+                <h3 class="card-title">Growth</h3>
+                <p class="card-text">Helping realtors scale through proven systems, strategic marketing, and measurable
+                    results.
+                </p>
+                <div class="card-accent"></div>
+            </div>
+
+            <!-- ── Card 2 — Real Estate (Top Right) ── -->
+            <div class="logo-card" data-position="top-right" id="card-2">
+                <div class="card-number">02</div>
+                <h3 class="card-title">Real Estate</h3>
+                <p class="card-text">Built exclusively for real estate professionals who are ready to dominate their
+                    market.</p>
+                <div class="card-accent"></div>
+            </div>
+
+            <!-- ── Card 3 — Innovation (Middle Left) ── -->
+            <div class="logo-card" data-position="mid-left" id="card-3">
+                <div class="card-number">03</div>
+                <h3 class="card-title">Innovation</h3>
+                <p class="card-text">Modern tools, automation, and CRM solutions that keep you ahead of the competition.
+                </p>
+                <div class="card-accent"></div>
+            </div>
+
+            <!-- ── Card 4 — Trust (Middle Right) ── -->
+            <div class="logo-card" data-position="mid-right" id="card-4">
+                <div class="card-number">04</div>
+                <h3 class="card-title">Trust</h3>
+                <p class="card-text">Long-term partnerships built on full transparency, integrity, and shared success.
+                </p>
+                <div class="card-accent"></div>
+            </div>
+
+            <!-- ── Card 5 — Connection (Bottom Left) ── -->
+            <div class="logo-card" data-position="bottom-left" id="card-5">
+                <div class="card-number">05</div>
+                <h3 class="card-title">Connection</h3>
+                <p class="card-text">Bridging leads, systems, and opportunities into one seamless growth pipeline.</p>
+                <div class="card-accent"></div>
+            </div>
+
+            <!-- ── Card 6 — Digital Systems (Bottom Right) ── -->
+            <div class="logo-card" data-position="bottom-right" id="card-6">
+                <div class="card-number">06</div>
+                <h3 class="card-title">Digital Systems</h3>
+                <p class="card-text">Creating predictable, scalable growth through smart automation and digital
+                    infrastructure.
+                </p>
+                <div class="card-accent"></div>
+            </div>
+
+        </div><!-- /logo-grid -->
+
+    </section><!-- /logo-section -->
+
+
+
+
+    <!-- ============================================================
+       WHY REALTORS CHOOSE LISTORA
+  ============================================================ -->
+    <section class="why-section" id="why-us">
+        <div class="container why-inner">
+
+            <!-- Left: Text Content -->
+            <div class="why-content">
+                <p class="section-label">WHY REALTORS CHOOSE LISTORA</p>
+                <h2 class="section-heading">
+                    More Than a Service.<br />We're Your Growth Partner.
+                </h2>
+
+                <p class="why-para">
+                    We're not a generic marketing agency. Everything we do is built specifically
+                    for real estate professionals — from the tools we use to the strategies we
+                    implement. Here's what sets us apart.
+                </p>
+
+                <!-- Two-column checklist -->
+                <div class="why-checklist">
+                    <ul class="checklist-col">
+                        <li class="checklist-item" style="--ci:0"><span class="check-icon">&#10003;</span> Real Estate
+                            Focused</li>
+                        <li class="checklist-item" style="--ci:1"><span class="check-icon">&#10003;</span> CRM &amp;
+                            Automation Experts</li>
+                        <li class="checklist-item" style="--ci:2"><span class="check-icon">&#10003;</span> Affordable
+                            Offshore Support</li>
+                    </ul>
+                    <ul class="checklist-col">
+                        <li class="checklist-item" style="--ci:3"><span class="check-icon">&#10003;</span> Transparent
+                            Communication</li>
+                        <li class="checklist-item" style="--ci:4"><span class="check-icon">&#10003;</span> Long-Term
+                            Growth Strategy</li>
+                        <li class="checklist-item" style="--ci:5"><span class="check-icon">&#10003;</span> Customized
+                            Solutions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right: Team Photo -->
+            <div class="why-image-wrap">
+                <img src="s8.png" alt="Listora team in a meeting" class="why-img" />
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       CORE VALUES SECTION
+  ============================================================ -->
+    <section class="values-section" id="values">
+        <div class="container2">
+
+            <p class="section-label centered">OUR CORE VALUES</p>
+            <div class="orange-line centered"></div>
+
+            <div class="values-grid">
+
+                <!-- Value 1 -->
+                <div class="value-block">
+                    <span class="value-number">01</span>
+                    <h4 class="value-title">Integrity</h4>
+                    <p class="value-text">
+                        We do what's right, always. Honesty and transparency are at the
+                        core of everything we do.
+                    </p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="value-block">
+                    <span class="value-number">02</span>
+                    <h4 class="value-title">Consistency</h4>
+                    <p class="value-text">
+                        We show up every day and deliver quality work our clients can
+                        rely on.
+                    </p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="value-block">
+                    <span class="value-number">03</span>
+                    <h4 class="value-title">Innovation</h4>
+                    <p class="value-text">
+                        We evolve, adapt, and continuously improve to bring the best
+                        results.
+                    </p>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="value-block">
+                    <span class="value-number">04</span>
+                    <h4 class="value-title">Client Success</h4>
+                    <p class="value-text">
+                        Your success is our mission. We grow when you grow.
+                    </p>
+                </div>
+
+            </div><!-- /.values-grid -->
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+       HOW WE HELP REALTORS GROW (Process Timeline)
+  ============================================================ -->
+    <section class="process-section" id="process">
+        <div class="container2">
+
+            <p class="section-label centered">HOW WE HELP REALTORS GROW</p>
+            <div class="orange-line centered"></div>
+
+            <div class="process-timeline">
+
+                <!-- Step 1 -->
+                <div class="process-step">
+                    <div class="process-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="16" cy="10" r="6" stroke="#F97316" stroke-width="2" />
+                            <path d="M4 28 C4 22 9 18 16 18 C23 18 28 22 28 28" stroke="#F97316" stroke-width="2"
+                                fill="none" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="process-connector"></div>
+                    <span class="process-number">01</span>
+                    <h5 class="process-title">Understand Your Goals</h5>
+                    <p class="process-text">
+                        We learn your business, your audience, and your objectives.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step">
+                    <div class="process-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="6" width="24" height="20" rx="3" stroke="#F97316" stroke-width="2" />
+                            <line x1="10" y1="12" x2="22" y2="12" stroke="#F97316" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="10" y1="17" x2="22" y2="17" stroke="#F97316" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="10" y1="22" x2="16" y2="22" stroke="#F97316" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="process-connector"></div>
+                    <span class="process-number">02</span>
+                    <h5 class="process-title">Build Your Digital Strategy</h5>
+                    <p class="process-text">
+                        We create a customized marketing &amp; CRM plan just for you.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step">
+                    <div class="process-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="16" cy="16" r="12" stroke="#F97316" stroke-width="2" />
+                            <path d="M10 16 L14 20 L22 12" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="process-connector"></div>
+                    <span class="process-number">03</span>
+                    <h5 class="process-title">Implement CRM Systems</h5>
+                    <p class="process-text">
+                        We set up automations, pipelines, and systems that work.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step">
+                    <div class="process-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="16" cy="10" r="5" stroke="#F97316" stroke-width="2" />
+                            <circle cx="26" cy="10" r="5" stroke="#F97316" stroke-width="2" />
+                            <path d="M4 28 C4 22 9 18 16 18" stroke="#F97316" stroke-width="2" fill="none"
+                                stroke-linecap="round" />
+                            <path d="M16 18 C23 18 28 22 28 28" stroke="#F97316" stroke-width="2" fill="none"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="process-connector"></div>
+                    <span class="process-number">04</span>
+                    <h5 class="process-title">Generate &amp; Nurture Leads</h5>
+                    <p class="process-text">
+                        We attract, engage, and nurture leads through proven strategies.
+                    </p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="process-step">
+                    <div class="process-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="4,24 10,16 16,19 22,10 28,14" stroke="#F97316" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                            <polyline points="22,8 28,8 28,14" stroke="#F97316" stroke-width="2" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <span class="process-number">05</span>
+                    <h5 class="process-title">Optimize &amp; Scale</h5>
+                    <p class="process-text">
+                        We analyze, optimize, and scale what's working for maximum growth.
+                    </p>
+                </div>
+
+            </div><!-- /.process-timeline -->
+
+        </div>
+    </section>
+
+
+
+    <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+    <footer class="footer" aria-label="Site footer">
+        <div class="footer-inner">
+
+            <!-- Brand Column -->
+            <div class="footer-col footer-col--brand">
+                <a href="#" class="brand-logo" aria-label="Listora home">
+                    <img src="logo 2.png" alt="Listora">
+                </a>
+                <p class="footer-tagline">Smart Marketing Agency for Real Estate Professionals</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Company Column -->
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="casestudies.html">Case Studies <i
+                                class="fa-solid fa-arrow-up-right-from-square footer-arrow" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="contact.html">Contact Us <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+            <!-- Services Column -->
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Real Estate Marketing <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="#">Lead Generation <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="#">CRM Management <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="#">Social Media Management <i
+                                class="fa-solid fa-arrow-up-right-from-square footer-arrow" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Newsletter Column -->
+            <div class="footer-col footer-col--newsletter">
+                <h4>Free Marketing Audit</h4>
+                <p class="newsletter-desc">Receive a personalised audit with expert recommendations to improve
+                    visibility, lead generation, and business growth.</p>
+                <div class="newsletter" role="group" aria-label="Email newsletter signup">
+                    <label for="about-email" class="sr-only">Your email address</label>
+                    <input type="email" id="about-email" placeholder="Enter your email..." autocomplete="email">
+                    <button id="about-sub-btn" aria-label="Subscribe">
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <p class="newsletter-msg" id="about-msg" role="status" aria-live="polite"></p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Listora Digital Media &nbsp;&middot;&nbsp; All rights reserved</p>
+        </div>
+
+    </footer>
+
+    <!-- Main Script -->
+    <script src="about.js"></script>
+    <!-- Unified mobile drawer (full swipe + focus-trap) -->
+    <script src="drawer.js"></script>
+    <!-- Sticky navbar scroll handler -->
+    <script>
+        (function () {
+            var nav = document.getElementById('ctNav');
+            if (!nav) return;
+            function onScroll() {
+                nav.classList.toggle('scrolled', window.scrollY > 50);
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        }());
+    </script>
+</body>
+
+</html>
